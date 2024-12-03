@@ -1,0 +1,24 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    dynamic:
+      primary: dev
+      datasource:
+        dev:
+          url: jdbc:mysql://10.130.4.218/smart_academic_affairs_dev?serverTimezone=UTC&useSSL=false
+          username: sa
+          password: sap@ssw0rd
+          driver-class-name: com.mysql.cj.jdbc.Driver
+        entity:
+          url: jdbc:mysql://10.130.4.218:3306/data_entity_man?serverTimezone=UTC&useSSL=false
+          username: sa
+          password: sap@ssw0rd
+          driver-class-name: com.mysql.cj.jdbc.Driver
+logging:
+  level:
+    com.baomidou.dynamic.datasource: DEBUG   # 设置动态数据源日志级别为 DEBUG
+    org.springframework.jdbc.core: DEBUG     # 设置JDBC操作日志为DEBUG
+    com.zaxxer.hikari: DEBUG                  # 设置连接池日志级别为DEBUG
+    org.springframework.transaction: DEBUG    # 设置事务管理相关日志级别为DEBUG
+
